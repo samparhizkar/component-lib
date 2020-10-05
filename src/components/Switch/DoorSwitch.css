@@ -1,0 +1,8 @@
+.doorswitch-container {
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    border-color: gray;
+    padding: 25px;
+}
