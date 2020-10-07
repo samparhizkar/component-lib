@@ -1,5 +1,6 @@
 import React from 'react';
 import Switch from '@material-ui/core/Switch';
+import {Container} from "../Container";
 
 export default function Toggle({checked = false, onChange, ...props}) {
     const [checkedState, setCheckedState] = React.useState(checked);
@@ -13,11 +14,11 @@ export default function Toggle({checked = false, onChange, ...props}) {
     };
 
     return (
-        <div>
+        <Container>
             <Switch
                 checked={checkedState}
                 onChange={handleChange}
             />
-        </div>
+        </Container>
     );
 }

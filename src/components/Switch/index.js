@@ -1,4 +1,4 @@
-import {DoorSwitch} from './DoorSwitch';
+import  {DoorSwitch} from './DoorSwitch';
 import {Switch} from './Switch';
 
 export {

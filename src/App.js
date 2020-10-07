@@ -1,17 +1,14 @@
 import React from 'react';
 import './App.css';
-import {DoorSwitch} from "./components/Switch";
-import {Container} from "./components/core/Container";
+import DoorSwitchWithCustomTheme from "./examples/themeDemo/DoorSwitchWithCustomTheme";
+import DoorSwitchWithDefaultTheme from "./examples/themeDemo/DoorSwitchWithDefaultTheme";
+import DoorSwitchWithMinorThemeOverride from "./examples/themeDemo/DoorSwitchWithMinorThemeOverride";
+import ContainerWithCustomColor from "./examples/themeDemo/ContainerWithCustomColor";
+
 
 function App() {
     return (
-        <Container className="App">
-            <Container className="App-header">
-                <DoorSwitch
-                    carId={'1234'}
-                />
-            </Container>
-        </Container>
+        <DoorSwitchWithDefaultTheme/>
     );
 }
 
