@@ -1,7 +1,9 @@
 import React from 'react';
 import {customTheme} from "../../components/theme";
 import Container from "../../components/core/Container/Container";
-function DoorSwitchWithCustomTheme() {
+import {DoorSwitch} from "../../components/Switch";
+
+function ContainerWithCustomColor() {
     return (
         <Container theme={customTheme}>
             <h1>Container background matched the primary theme color</h1>
@@ -9,4 +11,4 @@ function DoorSwitchWithCustomTheme() {
     );
 }
 
-export default DoorSwitchWithCustomTheme;
+export default ContainerWithCustomColor;

@@ -8,7 +8,7 @@ import ContainerWithCustomColor from "./examples/themeDemo/ContainerWithCustomCo
 
 function App() {
     return (
-        <DoorSwitchWithDefaultTheme/>
+        <ContainerWithCustomColor/>
     );
 }
 
