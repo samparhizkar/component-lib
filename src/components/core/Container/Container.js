@@ -1,11 +1,14 @@
-import React from 'react';
 import './Container.css';
+import styled from 'styled-components'
+import withTheme from "../../theme/withTheme";
 
-function Container({children, className = "", ...props}) {
-    return (
-        <div className={className} {...props}>
-            {children}</div>
-    )
-}
+const Container = styled.div`
+    background-color: ${props => props.theme.palette.primary.main};
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    border-color: ${props => props.theme.palette.primary.main};
+    padding: 25px;
+`;
 
-export default Container;
+export default withTheme(Container);

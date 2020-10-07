@@ -6,23 +6,25 @@ import {apiConfig} from "./config/config";
 import './DoorSwitch.css'
 import Text from "../core/Text";
 import {Container} from "../core/Container";
+import {customTheme} from "../theme";
 
 export const DoorSwitch = ({event, color, carId, ...props}) => {
-
+        console.log(" theme props", props)
     function toggleDoor(doorIsOpen = false) {
         patch(`${apiConfig.toggleDoor}`, {doorIsOpen, carId});
     }
-
     return (
-        <Container className="doorswitch-container" color={color}>
-            <Text type={'h1'}>
-                A Door Switch for Car #{carId}
-            </Text>
-            <Switch
-                {...props}
-                callBack={props.event || toggleDoor}
-            />
-        </Container>
+        <>
+            <Container>
+                <Text type={'h1'}>
+                    A Door Switch for Car #{carId}
+                </Text>
+                <Switch
+                    {...props}
+                    callBack={props.event || toggleDoor}
+                />
+            </Container>
+        </>
     );
 };
 
