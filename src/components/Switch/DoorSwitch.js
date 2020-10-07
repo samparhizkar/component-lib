@@ -7,24 +7,28 @@ import './DoorSwitch.css'
 import Text from "../core/Text";
 import {Container} from "../core/Container";
 import {customTheme} from "../theme";
+import ThemeProvider from "../theme/ThemeProvider";
 
-export const DoorSwitch = ({event, color, carId, ...props}) => {
-        console.log(" theme props", props)
+export const DoorSwitch = ({event, color, vinNumber,theme, ...props}) => {
+
     function toggleDoor(doorIsOpen = false) {
-        patch(`${apiConfig.toggleDoor}`, {doorIsOpen, carId});
+        patch(`${apiConfig.toggleDoor}`, {doorIsOpen, vinNumber});
     }
+
     return (
-        <>
-            <Container>
-                <Text type={'h1'}>
-                    A Door Switch for Car #{carId}
-                </Text>
-                <Switch
-                    {...props}
-                    callBack={props.event || toggleDoor}
-                />
-            </Container>
-        </>
+            <ThemeProvider themeOverride={theme}>
+                <Container>
+                    <Text type={'h1'}>
+                        A Door Switch Component
+                    </Text>
+                    <Switch
+                        theme = {customTheme}
+                        {...props}
+                        callBack={props.event || toggleDoor}
+                    />
+                </Container>
+            </ThemeProvider>
+
     );
 };
 
@@ -32,7 +36,7 @@ export const DoorSwitch = ({event, color, carId, ...props}) => {
 DoorSwitch.propTypes = {
     ...Switch.propTypes,
     color: PropTypes.string,
-    carId: PropTypes.string,
+    vinNumber: PropTypes.string,
     event: PropTypes.func
 };
 
@@ -40,7 +44,7 @@ DoorSwitch.propTypes = {
 DoorSwitch.defaultProps = {
     ...Switch.defaultProps,
     color: 'white',
-    carId: null,
+    vinNumber: null,
     event: undefined,
 
 };

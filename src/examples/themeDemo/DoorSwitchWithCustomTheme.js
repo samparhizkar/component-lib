@@ -1,10 +1,9 @@
 import React from 'react';
 import {DoorSwitch} from "../../components/Switch";
-import {customTheme} from "../../components/theme/themes/customTheme";
+import {customTheme} from "../../components/theme";
 function DoorSwitchWithCustomTheme() {
-    console.log("orignal custom theme is ", customTheme)
     return (
-        <DoorSwitch theme={customTheme}/>
+            <DoorSwitch theme={customTheme}/>
     );
 }
 

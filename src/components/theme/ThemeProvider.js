@@ -1,21 +1,29 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import ThemeContext from './ThemeContext';
+import React, {useContext} from "react";
+import {getTheme} from "./utils/themeHelper";
+import {ThemeProvider as StyledThemeProvider} from "styled-components";
+import {defaultTheme} from "./themes/defaultTheme";
+import mergeTheme from "./mergeTheme";
 
-export default class BreadProvider extends Component {
-    static propTypes = {
-        children: PropTypes.node.isRequired,
-        value: PropTypes.object,
-    };
-
-    static defaultProps = {
-        value: {},
-    };
-
-    render() {
-        const { children, value } = this.props;
-        return (
-            <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
-        );
+//
+export default function ThemeProvider({theme, themeOverride, ...props}) {
+    function getCurrentTheme() {
+        if (theme) {
+            return theme;
+        } else {
+            return defaultTheme;
+        }
     }
+
+    function getMergedTheme(themeOverride = {}) {
+        const currentTheme = getCurrentTheme();
+        return mergeTheme(currentTheme, themeOverride);
+    }
+
+    return (
+        <StyledThemeProvider theme={getMergedTheme(themeOverride)}>
+            {
+                props.children
+            }
+        </StyledThemeProvider>
+    );
 }

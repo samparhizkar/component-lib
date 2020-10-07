@@ -9,9 +9,9 @@ const palette = {
         white,
     },
     primary: {
-        main: 'blue',
+        main: '#666',
         light: '#146DD6',
-        contrastText: black,
+        contrastText: '#EAEAEA',
     },
     error: {
         main: '#A51C30',

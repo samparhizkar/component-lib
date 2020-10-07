@@ -1,18 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Toggle from "../core/Toggle";
+import Container from "../core/Container/Container";
 
 
 export const Switch = ({checked, disabled, onChange, ...props}) => {
     return (
-        <div>
+        <Container>
             <Toggle
                 checked={checked}
                 disabled={disabled}
                 onChange={onChange}
                 {...props}
             />
-        </div>
+        </Container>
     );
 };
 

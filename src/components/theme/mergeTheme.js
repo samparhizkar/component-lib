@@ -1,19 +1,7 @@
-import {defaultTheme} from './themes/defaultTheme';
+import merge from 'lodash-es/merge'
 
-function mergeTheme(userTheme) {
-    const mergedTheme = {
-        ...defaultTheme,
-    };
-
-    if (userTheme) {
-        Object.keys(mergedTheme).forEach(key => {
-            if (userTheme[key]) {
-                mergedTheme[key] = { ...defaultTheme[key], ...userTheme[key] };
-            }
-        });
-    }
-    console.log("passed theme", userTheme)
-    return mergedTheme;
+function mergeTheme(originalTheme, themeOverride) {
+    return merge(originalTheme, themeOverride);
 }
 
 export default mergeTheme;

@@ -1,7 +1,6 @@
 import React from 'react';
 
 import styled from 'styled-components'
-import withTheme from "../../theme/withTheme";
 
 const H1 = styled.h1`
   font-size: 2em;
@@ -21,7 +20,6 @@ const H3 = styled.h3`
 `;
 
 function Text({children, type = 'h1', ...props}) {
-    console.log("passed text props", props)
     switch (type) {
         case 'h1':
             return (<H1 {...props}>{children}</H1>)
@@ -32,4 +30,4 @@ function Text({children, type = 'h1', ...props}) {
     }
 }
 
-export default withTheme(Text);
+export default Text;
