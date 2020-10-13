@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import Switch from "../core/Toggle";
 import {patch} from "../../services/api/apiUtils";
@@ -8,11 +8,25 @@ import Text from "../core/Text";
 import {Container} from "../core/Container";
 import {customTheme} from "../theme";
 import ThemeProvider from "../theme/ThemeProvider";
+import axios from 'axios';
 
 export const DoorSwitch = ({event, color, vinNumber,theme, ...props}) => {
+    useEffect(() => {
+        // Update the document title using the browser API
+        console.log("you clicked x times");
+        toggleDoor()
+      });
 
     function toggleDoor(doorIsOpen = false) {
-        patch(`${apiConfig.toggleDoor}`, {doorIsOpen, vinNumber});
+        // patch(`${apiConfig.toggleDoor}`, {doorIsOpen, vinNumber});
+        axios.get('https://api.github.com/users/mapbox')
+        .then((response) => {
+          console.log("data is ",response.data);
+          console.log(response.status);
+          console.log(response.statusText);
+          console.log(response.headers);
+          console.log(response.config);
+        });
     }
 
     return (
