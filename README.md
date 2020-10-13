@@ -2,14 +2,14 @@
 
 > A universal component library
 
-[![NPM](https://img.shields.io/npm/v/component-lib--117.svg)](https://www.npmjs.com/package/component-lib) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/samp-component-lib.svg)](https://www.npmjs.com/package/component-lib) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Installation in consumer (CRA) projects
 
 ```bash
-npm install --save component-lib-117
+npm install --save samp-component-lib
 or
-yarn add component-lib-117
+yarn add samp-component-lib
 ```
 
 ## Example usage (CRA project)
@@ -17,12 +17,12 @@ yarn add component-lib-117
 ```jsx
 import React, { Component } from 'react'
 
-import {DoorSwtch} from 'component-lib-117'
-// import 'component-lib/dist/index.css'
+import {DoorSwtch} from 'samp-component-lib'
+// import 'samp-component-lib/dist/index.css'
 
 class Example extends Component {
   render() {
-    return <DoorSwtch />
+    return <DoorSwitch />
   }
 }
 ```
@@ -35,7 +35,7 @@ yarn start
 ```
 On consumer folder (Your front CRA project) run
 ```jsx
-yarn link component-lib-117
+yarn link samp-component-lib
 yarn start
 ```
 
