@@ -48,7 +48,7 @@
   },
   "jest": {
     "setupFilesAfterEnv": [
-      "<rootDir>src/setupTests.js"
+      "<rootDir>src/tests/setupTests.js"
     ],
     "transformIgnorePatterns": [
       "<rootDir>/node_modules/(?!lodash-es/.*)"

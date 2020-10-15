@@ -1,10 +1,8 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import Button from '../Button.js';
-import mountTest from "../../../../tests/commonTests/mountsComponent";
 
 describe('Button', () => {
-  mountTest(Button);
 
   it('should be defined', () => {
     expect(Button).toBeDefined();
