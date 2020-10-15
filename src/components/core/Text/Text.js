@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components'
+import {defaultTheme} from "../../theme";
 
 const H1 = styled.h1`
   font-size: 2em;
@@ -15,7 +16,7 @@ const H2 = styled.h2`
 `;
 const H3 = styled.h3`
   font-size: 1.5em;
-    color: ${props => props.theme.palette.primary.contrastText};
+    color: ${props => props.theme?.palette?.primary?.contrastText || defaultTheme.palette.primary.contrastText};
 
 `;
 
