@@ -1,8 +1,9 @@
 
 import React from 'react';
 import {mount} from 'enzyme';
-import {DoorSwitch, Switch} from "../index";
-import {defaultTheme} from "../../theme";
+import {DoorSwitch} from "../index";
+import {Switch} from "../Switch";
+import {defaultTheme} from "../../../theme";
 import {resetWarned} from "../../util/devWarning";
 
 describe('DoorSwitch', () => {

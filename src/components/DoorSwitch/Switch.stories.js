@@ -3,7 +3,7 @@ import React from 'react';
 import Switch from '@material-ui/core/Switch';
 
 export default {
-    title: 'Example/Switch',
+    title: 'Example/DoorSwitch',
     component: Switch,
     argTypes: {
         size: {

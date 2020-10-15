@@ -1,4 +1,4 @@
-import {defaultTheme} from "..";
+import {defaultTheme} from "../index";
 
 export const getTheme = (theme) => {
     if(theme){

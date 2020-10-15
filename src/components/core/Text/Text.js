@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components'
-import {defaultTheme} from "../../theme";
+import {defaultTheme} from "../../../theme";
 
 const H1 = styled.h1`
   font-size: 2em;

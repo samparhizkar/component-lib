@@ -5,8 +5,8 @@ import {patch} from "../../services/api/apiUtils";
 import {apiConfig} from "./config/config";
 import Text from "../core/Text";
 import {Container} from "../core/Container";
-import {customTheme} from "../theme";
-import ThemeProvider from "../theme/ThemeProvider";
+import {customTheme} from "../../theme";
+import ThemeProvider from "../../theme/ThemeProvider";
 import axios from 'axios';
 import devWarning from "../util/devWarning";
 

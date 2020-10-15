@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import React from "react";
-import ThemeProvider from "../../theme/ThemeProvider";
+import ThemeProvider from "../../../theme/ThemeProvider";
 
 const Container = styled.div`
     background-color: ${props => props.theme.palette.primary.main};

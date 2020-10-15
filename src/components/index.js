@@ -1,5 +1,5 @@
-import {Switch, DoorSwitch} from './Switch';
+import { DoorSwitch } from './DoorSwitch';
 
 export {
-    Switch , DoorSwitch
+  DoorSwitch
 };
