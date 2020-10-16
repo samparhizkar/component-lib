@@ -1,6 +1,6 @@
 {
   "name": "samp-component-lib",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A test ui component library",
   "author": "sam parhizkar",
   "main": "lib/index.js",
