@@ -25,6 +25,7 @@ yarn-error.log*
 build
 dist
 .rpt2_cache
+/lib
 
 # Coverage directory used by tools like istanbul
 coverage
