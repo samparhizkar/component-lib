@@ -2,6 +2,6 @@
 
 exports[`Container should render correctly 1`] = `
 <ThemeProvider>
-  <Container />
+  <styled.div />
 </ThemeProvider>
 `;
