@@ -3,62 +3,105 @@
   "version": "0.0.2",
   "description": "A test ui component library",
   "author": "sam parhizkar",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "source": "src/index.js",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "typings": "lib/cjs/index.d.ts",
+  "types": "lib/cjs/index.d.ts",
+  "source": "lib/index.js",
   "engines": {
     "node": ">=10"
   },
+  "sideEffects": false,
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
-    "start": "microbundle-crl watch --no-compress --format modern,cjs",
+    "prepare": "npm run build",
+    "build": "npm run clean && npm run build:tsc",
+    "build:rollup": "npm run clean && mkdirp lib && rollup -c",
+    "clean": "npm run clean:lib",
+    "clean:lib": "rm -rf lib",
+    "build:watch": "tsc -p --module esNext -w",
+    "build:tsc": "rimraf lib && mkdirp lib  && npm run build:esm && npm run build:cjs && npm run build:umd",
+    "build:esm": "tsc --module esNext --outDir lib/esm",
+    "build:cjs": "tsc --module commonjs --outDir lib/umd",
+    "build:umd": "tsc --module umd --outDir lib/cjs",
     "test": "jest",
-    "test:watch": "jest --watch"
-
+    "test:watch": "jest --watch",
+    "lint": "eslint .",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "build:docs": "build-storybook -o docs",
+    "clean:docs": "rm -rf docs",
+    "start": "run-s clean:lib build:js:esm  && run-p build:js:esm:watch storybook"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "axios": "^0.20.0",
     "lodash-es": "^4.17.15",
-    "styled-components": "^5.1.1"
+    "react-native-gifted-chat": "^0.16.3",
+    "styled-components": "^5.1.1",
+    "tslib": "2.0.3"
   },
   "peerDependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.0",
-    "@babel/preset-env": "^7.12.0",
-    "@babel/preset-react": "^7.10.4",
-    "babel-jest": "^26.5.2",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@storybook/addon-a11y": "^6.0.26",
+    "@storybook/addon-essentials": "^6.0.26",
+    "@storybook/addon-knobs": "^6.0.26",
+    "@storybook/preset-typescript": "^3.0.0",
+    "@storybook/react": "^6.0.26",
+    "@testing-library/jest-dom": "5.11.4",
+    "@testing-library/react": "11.1.0",
+    "@types/enzyme": "^3.10.7",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "26.0.14",
+    "@types/node": "14.11.8",
+    "@types/react": "16.9.52",
+    "@types/react-dom": "16.9.8",
+    "@typescript-eslint/eslint-plugin": "4.4.1",
+    "@typescript-eslint/parser": "4.4.1",
+    "axe-core": "4.0.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "enzyme-to-json": "^3.6.1",
-    "jest": "^26.5.3",
-    "microbundle-crl": "^0.13.10",
+    "eslint": "7.2.0",
+    "eslint-config-prettier": "6.12.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jest": "24.1.0",
+    "eslint-plugin-jsx-a11y": "^6.3.0",
+    "eslint-plugin-markdown": "^1.0.2",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "4.0.0",
+    "eslint-tinker": "^0.5.0",
+    "husky": "4.3.0",
+    "jest": "26.5.3",
+    "lint-staged": "10.4.0",
+    "mkdirp": "^1.0.4",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.1.2",
     "rc-util": "^5.4.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "rollup": "^2.30.0",
-    "styled-components": "^5.1.1"
+    "rimraf": "^3.0.2",
+    "rollup": "^2.31.0",
+    "rollup-plugin-peer-deps-external": "^2.2.3",
+    "rollup-plugin-sass": "^1.2.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.27.3",
+    "styled-components": "^5.1.1",
+    "ts-jest": "26.4.1",
+    "ts-loader": "8.0.5",
+    "typescript": "4.0.3"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/samparhizkar/component-lib"
   },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "<rootDir>src/tests/setupTests.js"
-    ],
-    "transformIgnorePatterns": [
-      "<rootDir>/node_modules/(?!lodash-es/.*)"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
-  },
   "files": [
-    "dist"
+    "lib"
   ],
   "license": "MIT",
   "bugs": {
