@@ -4,7 +4,7 @@
   "description": "A test ui component library",
   "author": "sam parhizkar",
   "main": "lib/cjs/index.js",
-  "module": "lib-esm/esm/index.js",
+  "module": "lib/esm/index.js",
   "typings": "lib/cjs/index.d.ts",
   "types": "lib/cjs/index.d.ts",
   "source": "lib/index.js",
@@ -34,7 +34,6 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
-    "antd": "^4.7.0",
     "axios": "^0.20.0",
     "lodash-es": "^4.17.15",
     "react-native-gifted-chat": "^0.16.3",
@@ -62,7 +61,6 @@
     "@typescript-eslint/eslint-plugin": "4.4.1",
     "@typescript-eslint/parser": "4.4.1",
     "axe-core": "4.0.2",
-    "chokidar": "3.4.3",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "enzyme-to-json": "^3.6.1",
@@ -75,7 +73,6 @@
     "eslint-plugin-prettier": "3.1.4",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "4.0.0",
-    "eslint-plugin-unicorn": "^22.0.0",
     "eslint-tinker": "^0.5.0",
     "husky": "4.3.0",
     "jest": "26.5.3",
@@ -102,8 +99,7 @@
     "url": "git+https://github.com/samparhizkar/component-lib"
   },
   "files": [
-    "lib",
-    "lib-esm"
+    "lib"
   ],
   "license": "MIT",
   "bugs": {
