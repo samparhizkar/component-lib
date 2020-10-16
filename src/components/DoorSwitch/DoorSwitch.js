@@ -30,7 +30,7 @@ export const DoorSwitch = ({
 
   return (
     <Container>
-      <Text type="h1">A Door Switch Component</Text>
+      <Text type="h1">A Doordfd Switch Component</Text>
       <Switch
         theme={customTheme}
         {...props}

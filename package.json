@@ -3,10 +3,10 @@
   "version": "0.0.2",
   "description": "A test ui component library",
   "author": "sam parhizkar",
-  "main": "lib/cjs/index.js",
-  "module": "lib/esm/index.js",
-  "typings": "lib/cjs/index.d.ts",
-  "types": "lib/cjs/index.d.ts",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "unpkg": "dist/index.js",
+  "typings": "lib/index.d.ts",
   "source": "lib/index.js",
   "engines": {
     "node": ">=10"
@@ -17,12 +17,12 @@
     "build": "npm run clean && npm run build:tsc",
     "build:rollup": "npm run clean && mkdirp lib && rollup -c",
     "clean": "npm run clean:lib",
-    "clean:lib": "rm -rf lib",
+    "clean:lib": "rimraf lib && rimraf es && rimraf dist",
     "build:watch": "tsc -p --module esNext -w",
-    "build:tsc": "rimraf lib && mkdirp lib  && npm run build:esm && npm run build:cjs && npm run build:umd",
-    "build:esm": "tsc --module esNext --outDir lib/esm",
-    "build:cjs": "tsc --module commonjs --outDir lib/umd",
-    "build:umd": "tsc --module umd --outDir lib/cjs",
+    "build:tsc": "npm run clean  && npm run build:es && npm run build:cjs && npm run build:umd",
+    "build:es": "tsc --module esNext --outDir es",
+    "build:cjs": "tsc --module commonjs --outDir lib",
+    "build:umd": "tsc --module umd --outDir dist",
     "test": "jest",
     "test:watch": "jest --watch",
     "lint": "eslint .",
@@ -30,7 +30,7 @@
     "build-storybook": "build-storybook",
     "build:docs": "build-storybook -o docs",
     "clean:docs": "rm -rf docs",
-    "start": "run-s clean:lib build:js:esm  && run-p build:js:esm:watch storybook"
+    "start": "run-s clean:lib build:js:es  && run-p build:js:es:watch storybook"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -101,7 +101,9 @@
     "url": "git+https://github.com/samparhizkar/component-lib"
   },
   "files": [
-    "lib"
+    "lib",
+    "es",
+    "dist"
   ],
   "license": "MIT",
   "bugs": {

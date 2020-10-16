@@ -1,3 +1,3 @@
-import DoorSwitch from './components';
+import { DoorSwitch } from './components';
 
 export { DoorSwitch };

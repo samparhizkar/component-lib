@@ -24,6 +24,8 @@ yarn-error.log*
 # builds
 build
 dist
+lib
+es
 .rpt2_cache
 /lib
 
