@@ -1,4 +1,4 @@
-# component-lib-117
+# react-component-lib
 
 > A universal component library
 
