@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { Container } from '../index';
+import { Container } from './index';
+import {shallowWithTheme} from "../util/testUtils";
 
 describe('Container', () => {
   it('should be defined', () => {
@@ -8,7 +8,7 @@ describe('Container', () => {
   });
 
   it('should render correctly', () => {
-    const tree = shallow(<Container />);
+    const tree = shallowWithTheme(<Container />);
     expect(tree).toMatchSnapshot();
   });
 });

@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import Button from '../Button.js';
+import Button from './Button';
+import {shallowWithTheme} from "../util/testUtils";
 
 describe('Button', () => {
   it('should be defined', () => {
@@ -8,7 +8,7 @@ describe('Button', () => {
   });
 
   it('should render correctly', () => {
-    const wrapper = shallow(<Button name="button test" />);
+    const wrapper = shallowWithTheme(<Button name="button test" />);
     expect(wrapper.exists()).toBe(true);
     // expect(wrapper).toMatchSnapshot();
   });
@@ -16,8 +16,8 @@ describe('Button', () => {
   it('runs callback after clicked', () => {
     const mockCallBack = jest.fn();
 
-    const button = shallow(<Button onClick={mockCallBack}>Ok!</Button>);
-    button.find('button').simulate('click');
+    const button = shallowWithTheme(<Button onClick={mockCallBack}>Ok!</Button>);
+    button.simulate('click');
     expect(mockCallBack.mock.calls.length).toEqual(1);
   });
 });

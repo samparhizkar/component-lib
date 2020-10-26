@@ -26,8 +26,6 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   color = 'primary',
   ...rest
 }) => {
-  // const { theme } = useContext(ThemeContext);
-  console.log('theme is ', rest);
   return (
     <StyledButton
       color={color}

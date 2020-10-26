@@ -22,7 +22,6 @@ export const Text: React.FunctionComponent<TextProps> = ({
   color = 'black',
   ...props
 }) => {
-  console.log('container props', props);
   const { children } = props;
   switch (type) {
     case 'h1':
